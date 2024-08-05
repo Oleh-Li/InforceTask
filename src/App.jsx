@@ -1,23 +1,22 @@
-import { useState } from 'react'
-import axios from 'axios'
-import { } from "react"
+import { useState, useEffect } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
 import './App.css'
+import { fetchProducts } from './redux/slices/products.js'
+import { Home } from './pages/Home'
+import { Link, Route, Routes } from 'react-router-dom'
+import { Product } from './pages/Product'
 
 function App() {
 
-  const [products, setProducts] = useState(null)
-
-  const fetchProducts = async () => {
-    const response = await axios.get('http://localhost:3000/products')
-    console.log("response==>", response)
-    return response.data
-  }
-
-  fetchProducts()
-
   return (
     <>
-      ff
+      <Link to="/">
+        <h2>Inforce Task</h2>
+      </Link>
+      <Routes>
+        <Route path='/' element={<Home />} />
+        <Route path='/products/:id' element={<Product />} />
+      </Routes>
     </>
   )
 }

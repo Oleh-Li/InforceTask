@@ -1,29 +1,134 @@
 {
-    "products": [
+  "products": [
+    {
+      "id": "1",
+      "imageUrl": "https://www.sony.ua/image/88de0249f4df8101f60bccc4aaa57779?fmt=pjpeg&wid=330&bgcolor=FFFFFF&bgc=FFFFFF",
+      "name": "TV 4K 1",
+      "count": 4,
+      "size": {
+        "width": 200,
+        "height": 200
+      },
+      "weight": "200g",
+      "comments": [
         {
-            "id": 1,
-            "imageUrl": "",
-            "name": "",
-            "count": 4,
-            "size": {
-                "width":200,
-                "height": 200
-            },
-            "weight": "200g",
-            "comments": [
-                {
-                    "id": 1,
-                    "productId": 1,
-                    "description": "some text here",
-                    "data": "14:00 22.08.2021"
-                },
-                {
-                    "id": 2,
-                    "productId": 1,
-                    "description": "some text here",
-                    "data": "14:00 22.08.2021"
-                }
-            ]
+          "id": 1,
+          "productId": 1,
+          "description": "some text here",
+          "date": "14:00 22.08.2021"
+        },
+        {
+          "id": 2,
+          "productId": 1,
+          "description": "some text here",
+          "date": "14:00 22.08.2021"
         }
-    ]
+      ]
+    },
+    {
+      "id": "2",
+      "imageUrl": "https://res.cloudinary.com/sharp-consumer-eu/image/fetch/w_1100,f_auto,q_auto/https://s3.infra.brandquad.io/accounts-media/SHRP/DAM/origin/a898c7d2-8f27-11ea-a21e-c276f464bfe6.jpg",
+      "name": "TV 2K 2",
+      "count": 4,
+      "size": {
+        "width": 200,
+        "height": 200
+      },
+      "weight": "200g",
+      "comments": [
+        {
+          "id": 1,
+          "productId": 1,
+          "description": "some text here",
+          "date": "14:00 22.08.2021"
+        },
+        {
+          "id": 2,
+          "productId": 1,
+          "description": "some text here",
+          "date": "14:00 22.08.2021"
+        }
+      ]
+    },
+    {
+      "id": "3",
+      "imageUrl": "https://www.sony.ua/image/88de0249f4df8101f60bccc4aaa57779?fmt=pjpeg&wid=330&bgcolor=FFFFFF&bgc=FFFFFF",
+      "name": "TV 4K 3",
+      "count": 4,
+      "size": {
+        "width": 200,
+        "height": 200
+      },
+      "weight": "200g",
+      "comments": [
+        {
+          "id": 1,
+          "productId": 1,
+          "description": "some text here",
+          "date": "14:00 22.08.2021"
+        },
+        {
+          "id": 2,
+          "productId": 1,
+          "description": "some text here",
+          "date": "14:00 22.08.2021"
+        }
+      ]
+    },
+    {
+      "id": "4",
+      "imageUrl": "https://res.cloudinary.com/sharp-consumer-eu/image/fetch/w_1100,f_auto,q_auto/https://s3.infra.brandquad.io/accounts-media/SHRP/DAM/origin/a898c7d2-8f27-11ea-a21e-c276f464bfe6.jpg",
+      "name": "TV 2K edited v2",
+      "count": 4,
+      "size": {
+        "width": 200,
+        "height": 200
+      },
+      "weight": "200g",
+      "comments": [
+        {
+          "id": 1,
+          "productId": 1,
+          "description": "some text here",
+          "date": "14:00 22.08.2021"
+        },
+        {
+          "id": 2,
+          "productId": 1,
+          "description": "some text here",
+          "date": "14:00 22.08.2021"
+        },
+        {
+          "id": 1722882207238,
+          "description": "fvnfldsv wlkvnlv",
+          "data": "2024-08-05T18:23:27.238Z"
+        },
+        {
+          "id": 1722882313316,
+          "description": "dfgbfg",
+          "data": "2024-08-05T18:25:13.316Z"
+        }
+      ]
+    },
+    {
+      "id": "B8R4YIRaYswtrMzSadtET",
+      "name": "new tv edited",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/1/14/No_Image_Available.jpg",
+      "count": "123",
+      "weight": "123",
+      "width": "200",
+      "height": "100",
+      "size": {
+        "width": 200,
+        "height": 100
+      },
+      "comments": [
+        {
+          "id": 1722883391897,
+          "description": "adcdscsdc",
+          "date": "2024-08-05T18:43:11.897Z"
+        }
+      ]
+    }
+  ]
 }
