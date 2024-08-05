@@ -4,18 +4,21 @@ import { fetchProducts } from '../redux/slices/products';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import AddProductModal from '../components/modal/AddProductModal.jsx';
+import ConfirmDeleteModal from '../components/modal/ConfirmDeleteModal.jsx';
 
 export const Home = () => {
     const dispatch = useDispatch();
     const { products: { items, status } } = useSelector(state => state.products);
-    const [isModalOpen, setIsModalOpen] = useState(false);
+    const [isAddProductModalOpen, setIsAddProductModalOpen] = useState(false);
+    const [isConfirmDeleteModalOpen, setIsConfirmDeleteModalOpen] = useState(false);
+    const [productToDelete, setProductToDelete] = useState(null);
 
     useEffect(() => {
         dispatch(fetchProducts());
     }, [dispatch]);
 
     const handleAddProductClick = () => {
-        setIsModalOpen(true);
+        setIsAddProductModalOpen(true);
     };
 
     const handleAddProduct = async (newProduct) => {
@@ -24,6 +27,25 @@ export const Home = () => {
             dispatch(fetchProducts());
         } catch (err) {
             console.error("Error adding product:", err);
+        }
+    };
+
+    const handleRemoveClick = (product) => {
+        setProductToDelete(product);
+        setIsConfirmDeleteModalOpen(true);
+    };
+
+    const handleDeleteProduct = async () => {
+        try {
+            if (productToDelete) {
+                await axios.delete(`http://localhost:3000/products/${productToDelete.id}`);
+                dispatch(fetchProducts());
+            }
+        } catch (err) {
+            console.error("Error deleting product:", err);
+        } finally {
+            setIsConfirmDeleteModalOpen(false);
+            setProductToDelete(null);
         }
     };
 
@@ -38,15 +60,22 @@ export const Home = () => {
                         </Link>
                         {imageUrl ? <img height={200} src={imageUrl} alt={name} /> : <p>No Image</p>}
                         <hr />
-                        {/* <button>Remove</button> */}
+                        <button onClick={() => handleRemoveClick({ id, name })}>Remove</button>
                     </div>
                 ))}
             </ul>
 
             <AddProductModal
-                isOpen={isModalOpen}
-                onClose={() => setIsModalOpen(false)}
+                isOpen={isAddProductModalOpen}
+                onClose={() => setIsAddProductModalOpen(false)}
                 onAddProduct={handleAddProduct}
+            />
+
+            <ConfirmDeleteModal
+                isOpen={isConfirmDeleteModalOpen}
+                onClose={() => setIsConfirmDeleteModalOpen(false)}
+                onConfirm={handleDeleteProduct}
+                productName={productToDelete?.name}
             />
         </>
     );
